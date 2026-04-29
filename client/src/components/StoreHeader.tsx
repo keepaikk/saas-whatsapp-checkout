@@ -1,5 +1,5 @@
-import { MapPin, Phone, Globe, ExternalLink } from 'lucide-react';
-import { Business } from '../types';
+import { MapPin, Phone } from 'lucide-react';
+import type { Business } from '../types';
 
 export default function StoreHeader({ business }: { business: Business }) {
   return (

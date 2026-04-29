@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ShoppingCart, X, Minus, Trash2 } from 'lucide-react';
+import { ShoppingCart, X, Trash2 } from 'lucide-react';
 
 interface CartItem {
   menuId: string;

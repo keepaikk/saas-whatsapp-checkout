@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getBusiness } from './api';
-import { Business } from '../types';
+import { getBusiness } from '../lib/api';
+import type { Business } from '../types';
 
 export function useBusiness(slug: string) {
   const [business, setBusiness] = useState<Business | null>(null);
@@ -12,8 +12,8 @@ export function useBusiness(slug: string) {
     let cancelled = false;
 
     getBusiness(slug)
-      .then((b) => { if (!cancelled) { setBusiness(b); setLoading(false); } })
-      .catch((e) => { if (!cancelled) { setError(e); setLoading(false); } });
+      .then((b: Business) => { if (!cancelled) { setBusiness(b); setLoading(false); } })
+      .catch((e: Error) => { if (!cancelled) { setError(e); setLoading(false); } });
 
     return () => { cancelled = true; };
   }, [slug]);

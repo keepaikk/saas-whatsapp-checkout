@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Building2, UtensilsCrossed, ClipboardList } from 'lucide-react';
+import { LayoutDashboard, Building2 } from 'lucide-react';
 
 const nav = [
   { label: 'Dashboard', path: '/admin', icon: LayoutDashboard },

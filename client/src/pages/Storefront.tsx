@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useBusiness } from '../../hooks/useBusiness';
-import { useTheme } from '../../hooks/useTheme';
-import { getMenus, createOrder } from '../../lib/api';
-import { MenuItem, Business } from '../../types';
-import StoreHeader from '../../components/StoreHeader';
-import StoreMenuCard from '../../components/StoreMenuCard';
-import StoreCart from '../../components/StoreCart';
+import { useBusiness } from '../hooks/useBusiness';
+import { useTheme } from '../hooks/useTheme';
+import { getMenus, createOrder } from '../lib/api';
+import type { MenuItem } from '../types';
+import StoreHeader from '../components/StoreHeader';
+import StoreMenuCard from '../components/StoreMenuCard';
+import StoreCart from '../components/StoreCart';
 
 export default function Storefront() {
   const { slug } = useParams<{ slug: string }>();
@@ -41,7 +41,7 @@ export default function Storefront() {
   const checkout = async () => {
     if (!business || cart.length === 0) return;
 
-    const order = await createOrder(business.id, {
+    await createOrder(business.id, {
       customerName: 'Guest',
       phone: business.whatsappNumber,
       items: cart,

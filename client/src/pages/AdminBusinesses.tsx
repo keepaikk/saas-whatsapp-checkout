@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Pencil, Trash2, UtensilsCrossed, ClipboardList } from 'lucide-react';
-import { getBusinesses, deleteBusiness } from '../../lib/api';
-import { Business } from '../../types';
+import { getBusinesses, deleteBusiness } from '../lib/api';
+import type { Business } from '../types';
 
 export default function AdminBusinesses() {
   const [businesses, setBusinesses] = useState<Business[]>([]);

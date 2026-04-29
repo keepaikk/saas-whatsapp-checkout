@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Business } from '../types';
+import type { Business } from '../types';
 
 export function useTheme(business: Business | null) {
   useEffect(() => {

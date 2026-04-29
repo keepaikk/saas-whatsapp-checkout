@@ -1,5 +1,5 @@
 import { Plus } from 'lucide-react';
-import { MenuItem } from '../types';
+import type { MenuItem } from '../types';
 
 export default function StoreMenuCard({ item, onAdd }: { item: MenuItem; onAdd: () => void }) {
   if (!item.isAvailable) return null;

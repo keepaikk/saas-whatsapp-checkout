@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Plus, Trash2 } from 'lucide-react';
-import { getMenus, deleteMenu, createMenu } from '../../lib/api';
-import { getBusinesses } from '../../lib/api';
-import { MenuItem, Business } from '../../types';
+import { getMenus, deleteMenu, createMenu } from '../lib/api';
+import { getBusinesses } from '../lib/api';
+import type { MenuItem, Business } from '../types';
 
 export default function AdminMenus() {
   const { id } = useParams<{ id: string }>();
@@ -14,8 +14,8 @@ export default function AdminMenus() {
 
   useEffect(() => {
     if (!id) return;
-    getBusinesses().then((all) => {
-      const biz = all.find((b) => b.id === id);
+    getBusinesses().then((all: Business[]) => {
+      const biz = all.find((b: Business) => b.id === id);
       if (biz) setBusiness(biz);
     });
     getMenus(id).then(setMenus).catch(console.error);

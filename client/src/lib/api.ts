@@ -1,4 +1,4 @@
-import { Business, MenuItem, Order, SocialLink } from '../types';
+import type { Business, MenuItem, Order } from '../types';
 
 const BASE = import.meta.env.VITE_API_URL || '';
 

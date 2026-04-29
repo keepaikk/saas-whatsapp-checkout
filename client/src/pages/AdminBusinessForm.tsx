@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Save } from 'lucide-react';
-import { createBusiness, updateBusiness, getBusiness, getBusinesses } from '../../lib/api';
-import { Business } from '../../types';
+import { createBusiness, updateBusiness, getBusinesses } from '../lib/api';
+import type { Business } from '../types';
 
 export default function AdminBusinessForm() {
   const { id } = useParams<{ id: string }>();

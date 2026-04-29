@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { getOrders, getBusinesses } from '../../lib/api';
-import { Order, Business } from '../../types';
+import { useParams } from 'react-router-dom';
+import { getOrders, getBusinesses } from '../lib/api';
+import type { Order, Business } from '../types';
 
 const statusColors: Record<Order['status'], string> = {
   pending: 'bg-yellow-100 text-yellow-700',
@@ -17,8 +17,8 @@ export default function AdminOrders() {
 
   useEffect(() => {
     if (!id) return;
-    getBusinesses().then((all) => {
-      const biz = all.find((b) => b.id === id);
+    getBusinesses().then((all: Business[]) => {
+      const biz = all.find((b: Business) => b.id === id);
       if (biz) setBusiness(biz);
     });
     getOrders(id).then(setOrders).catch(console.error);
@@ -62,7 +62,7 @@ export default function AdminOrders() {
               <tr key={o.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3 font-medium">{o.customerName}</td>
                 <td className="px-4 py-3">{o.phone}</td>
-                <td className="px-4 py-3">{o.items.map((i) => `${i.title} x${i.qty}`).join(', ')}</td>
+                <td className="px-4 py-3">{o.items.map((i: Order['items'][number]) => `${i.title} x${i.qty}`).join(', ')}</td>
                 <td className="px-4 py-3 font-bold">${o.totalAmount.toFixed(2)}</td>
                 <td className="px-4 py-3">
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${statusColors[o.status]}`}>
