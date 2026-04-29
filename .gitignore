@@ -4,7 +4,6 @@ node_modules
 data/
 public/uploads/
 docker-compose.override.yml
-stack.env
 .env
 .env.local
 data/
