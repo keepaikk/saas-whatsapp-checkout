@@ -20,7 +20,7 @@ export interface MenuItem {
   id: string;
   businessId: string;
   title: string;
-  description: string;
+  description?: string;
   price: number;
   imageUrl?: string;
   category: string;
