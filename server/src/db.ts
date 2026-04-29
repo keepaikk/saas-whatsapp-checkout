@@ -22,6 +22,10 @@ export class JsonDb<T extends { id: string }> {
     return this.records.find((r) => r.id === id);
   }
 
+  getBySlug(slug: string): T | undefined {
+    return this.records.find((r) => (r as any).slug === slug);
+  }
+
   create(item: Omit<T, 'id'> & { id?: string }): T {
     const record = { ...(item as any), id: item.id ?? randomUUID() } as T;
     this.records.push(record);
