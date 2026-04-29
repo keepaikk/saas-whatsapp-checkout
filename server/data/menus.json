@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "businessId": "1c91c8a0-33a8-4575-a1b0-88f6ff70f88f",
+    "title": "Jollof Rice",
+    "description": "Spicy Ghana-style with chicken",
+    "price": 15,
+    "category": "Mains",
+    "isAvailable": true,
+    "id": "1c9fa990-ce0d-4682-bca3-2b71fd0c6a33"
+  },
+  {
+    "businessId": "1c91c8a0-33a8-4575-a1b0-88f6ff70f88f",
+    "title": "Grilled Tilapia",
+    "description": "Fresh fish with pepper sauce",
+    "price": 25,
+    "category": "Mains",
+    "isAvailable": true,
+    "id": "1a562d3b-1380-4921-ba6f-9b25e6a39055"
+  },
+  {
+    "businessId": "1c91c8a0-33a8-4575-a1b0-88f6ff70f88f",
+    "title": "Kelewele",
+    "description": "Spicy fried plantain cubes",
+    "price": 10,
+    "category": "Sides",
+    "isAvailable": true,
+    "id": "828e7195-1402-44cd-821c-9811acf06b9b"
+  },
+  {
+    "businessId": "1c91c8a0-33a8-4575-a1b0-88f6ff70f88f",
+    "title": "Tsofi",
+    "description": "Fried turkey tail",
+    "price": 12,
+    "category": "Sides",
+    "isAvailable": false,
+    "id": "4480d70d-c4ce-4cd4-bd5f-27ef608090fc"
+  },
+  {
+    "businessId": "97ab71d8-ca4a-4fde-bfb7-ca05d5e54823",
+    "title": "Cappuccino",
+    "description": "Freshly brewed with foam art",
+    "price": 18,
+    "category": "Coffee",
+    "isAvailable": true,
+    "id": "02781519-7d7d-4cc9-ae80-ab71a7624699"
+  },
+  {
+    "businessId": "97ab71d8-ca4a-4fde-bfb7-ca05d5e54823",
+    "title": "Croissant",
+    "description": "Butter pastry",
+    "price": 8,
+    "category": "Pastry",
+    "isAvailable": true,
+    "id": "7c7dbaa6-2266-4116-a524-0549cba953a6"
+  },
+  {
+    "businessId": "97ab71d8-ca4a-4fde-bfb7-ca05d5e54823",
+    "title": "Pancakes",
+    "description": "Stack of 3 with maple syrup",
+    "price": 22,
+    "category": "Breakfast",
+    "isAvailable": true,
+    "id": "1eeffa6a-9464-4d3f-8754-32d7cbcec300"
+  },
+  {
+    "businessId": "97ab71d8-ca4a-4fde-bfb7-ca05d5e54823",
+    "title": "Fresh Juice",
+    "description": "Orange or mango",
+    "price": 12,
+    "category": "Drinks",
+    "isAvailable": true,
+    "id": "4b443407-f6e0-41b0-8f6e-a4c60f25cfbf"
+  }
+]

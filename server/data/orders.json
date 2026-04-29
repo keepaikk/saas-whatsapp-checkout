@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "businessId": "1c91c8a0-33a8-4575-a1b0-88f6ff70f88f",
+    "customerName": "Kwaku",
+    "phone": "+971***0000",
+    "items": [
+      {
+        "menuId": "",
+        "title": "Jollof Rice",
+        "qty": 2,
+        "price": 15
+      },
+      {
+        "menuId": "",
+        "title": "Kelewele",
+        "qty": 1,
+        "price": 10
+      }
+    ],
+    "totalAmount": 40,
+    "status": "pending",
+    "createdAt": "2026-04-29T12:24:14.389Z",
+    "id": "94395399-f7f6-4181-b7c7-a4091e957236"
+  }
+]
