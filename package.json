@@ -1,0 +1,16 @@
+{
+  "name": "saas-whatsapp-checkout",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "concurrently 'npm run server' 'npm run client'",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "preview": "cd client && npm run preview",
+    "test": "cd server && npm test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
