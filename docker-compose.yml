@@ -1,0 +1,46 @@
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - stack.env
+    volumes:
+      - api_data:/app/data
+      - api_uploads:/app/public/uploads
+    networks:
+      - saas_net
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  web:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL}
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    env_file:
+      - stack.env
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - saas_net
+
+volumes:
+  api_data:
+    driver: local
+  api_uploads:
+    driver: local
+
+networks:
+  saas_net:
+    driver: bridge

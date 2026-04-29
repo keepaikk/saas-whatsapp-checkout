@@ -3,7 +3,9 @@ import * as path from 'path';
 import { randomUUID } from 'crypto';
 import { Business, MenuItem, Order, SocialLink } from './types';
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
+const DATA_DIR = process.env.DATA_DIR
+  ? path.resolve(process.env.DATA_DIR)
+  : path.join(__dirname, '..', 'data');
 
 export class JsonDb<T extends { id: string }> {
   private records: T[] = [];

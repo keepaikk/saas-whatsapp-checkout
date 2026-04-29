@@ -9,9 +9,14 @@ import webhookRoutes from './routes/webhook';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:5173';
+app.use(cors({ origin: CORS_ORIGIN === '*' ? true : CORS_ORIGIN.split(',').map(o => o.trim()) }));
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
+
+const uploadStaticPath = process.env.UPLOAD_DIR
+  ? path.resolve(process.env.UPLOAD_DIR)
+  : path.join(__dirname, '../public/uploads');
+app.use('/uploads', express.static(uploadStaticPath));
 
 app.get('/api/health', (_, res) => res.json({ status: 'ok' }));
 
