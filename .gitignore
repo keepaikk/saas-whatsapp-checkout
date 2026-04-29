@@ -1,10 +1,17 @@
-node_modules
+# Secrets
 .env
 .env.local
+.env.*.local
+
+# Data
+api_data/
+api_uploads/
 data/
 public/uploads/
+
+# Node
+node_modules/
+dist/
+
+# Docker
 docker-compose.override.yml
-.env
-.env.local
-data/
-public/uploads/
